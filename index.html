@@ -12,9 +12,29 @@
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+
 </head>
 <body>
-  <iframe id="iframe" style="border: 0; position:fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%"></iframe>
-  <script src="main.js"></script>
+  <iframe id="bragsIframe" class="animated fadeIn" style="border: 0; position:fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%" src="http://brag.headspring.com/boards/headspring/show-off"></iframe>
+  <iframe id="dashboardIframe" class="animated fadeOut" style="border: 0; position:fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%" src="https://embengineering-kyfl-rock.herokuapp.com"></iframe>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+
+      init();
+
+      function init() {
+        setInterval(switchIframe, 30000);
+        switchIframe();
+      }
+
+      function switchIframe() {
+        $('#bragsIframe, #dashboardIframe').toggleClass('fadeIn fadeOut');
+      }
+
+    });
+  </script>
 </body>
 </html>
